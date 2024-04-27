@@ -48,3 +48,7 @@ if st.session_state.stage == 2:
         else:
             st.success("You found the treasure! Congratulations!")
             st.session_state.stage = 3  # End the game with failure
+if st.session_state.stage == -1 or st.session_state.stage == 3:
+    if st.button("Restart"):
+        st.session_state.stage = 0
+        st.experimental_rerun()
